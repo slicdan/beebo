@@ -1,0 +1,7 @@
+# Real datasource comes from Testcontainers (@ServiceConnection).
+# Placeholders only satisfy property binding; they are never connected to.
+spring:
+  datasource:
+    url: jdbc:mysql://unused/unused
+    username: unused
+    password: unused

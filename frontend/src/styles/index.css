@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+/* Dark mode is class-based (html.dark), matching the previous Beebo behaviour. */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Design tokens. Brand colours carried over from the original Beebo. */
+@theme {
+  --font-sans: "Inter Variable", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+  --color-brand-red: #DA292E;
+  --color-brand-red-strong: #B81F24;
+
+  --color-ink: #111827;
+  --color-ink-muted: #6B7280;
+  --color-surface: #FFFFFF;
+  --color-surface-sunken: #F3F4F6;
+  --color-line: #E5E7EB;
+
+  --color-night: #0E1116;
+  --color-night-raised: #171B22;
+  --color-night-line: #272D37;
+  --color-night-ink: #E7EAEE;
+  --color-night-muted: #9AA3AF;
+
+  --color-ok: #15803D;
+  --color-ok-night: #4ADE80;
+  --color-bad: #B42318;
+  --color-bad-night: #F87171;
+}
+
+@layer base {
+  html { color-scheme: light; }
+  html.dark { color-scheme: dark; }
+  body { @apply bg-surface-sunken text-ink antialiased; }
+  html.dark body { @apply bg-night text-night-ink; }
+  :focus-visible {
+    outline: 2px solid var(--color-brand-red);
+    outline-offset: 2px;
+  }
+}

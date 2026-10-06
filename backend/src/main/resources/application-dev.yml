@@ -1,0 +1,10 @@
+# Local development against the Compose MySQL (docker compose up db).
+spring:
+  datasource:
+    url: ${BEEBO_DB_URL:jdbc:mysql://localhost:3306/beebo}
+    username: ${BEEBO_DB_USER:beebo}
+    password: ${BEEBO_DB_PASSWORD:change-me-app}
+
+logging:
+  level:
+    com.beebo: DEBUG

@@ -1,0 +1,10 @@
+# Production: every value must come from the environment. No defaults.
+springdoc:
+  swagger-ui:
+    enabled: false
+  api-docs:
+    enabled: false
+
+logging:
+  level:
+    root: INFO
